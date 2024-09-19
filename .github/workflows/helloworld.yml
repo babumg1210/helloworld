@@ -17,9 +17,9 @@ jobs:
       #     username: '${{ secrets.REGISTRY_USERNAME }}'
       #     password: '${{ secrets.REGISTRY_PASSWORD }}'
       - run: |
-          docker build -t sampleapp:3.0.0 Applicationcode
-          docker tag sampleapp:3.0.0 ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:3.0.0
+          docker build -t sampleapp:4.0.0 Applicationcode
+          docker tag sampleapp:4.0.0 ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:4.0.0
           docker images
           az login az login --service-principal --username ${{ secrets.REGISTRY_USERNAME }}  --password ${{ secrets.REGISTRY_PASSWORD }}
           az acr login --name ${{ secrets.REGISTRY_LOGIN_SERVER }
-          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:3.0.0
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:4.0.0
