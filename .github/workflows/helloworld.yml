@@ -35,7 +35,7 @@ jobs:
                  kubectl create namespace "${NAMESPACE}"
             fi
             # check ns
-            kubectl get ns
+            kubectl get ns -n ${NAMESPACE}
             #nginx initination service
             kubectl apply -f kubemanifestfile/deployment.yml kubemanifestfile/service.yml
     
