@@ -35,9 +35,10 @@ jobs:
                  kubectl create namespace "${NAMESPACE}"
             fi
             # check ns
-            kubectl get ns -n ${NAMESPACE}
+            kubectl get ns | 
+            kubectl config set-context --current --namespace=${NAMESPACE}  # Replace with your namespace
             #nginx initination service
-            kubectl apply -f kubemanifestfile/deployment.yml kubemanifestfile/service.yml
+            kubectl apply -f kubemanifestfile/deployment.yml kubemanifestfile/service.yml -n ${NAMESPACE}
     
              
 
