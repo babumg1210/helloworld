@@ -15,7 +15,7 @@ spec: # Dictionary
     spec:
       containers: # List
         - name: myapp3-container
-          image: ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:4.0.0
+          image: korregistry.azurecr.io/sampleapp:4.0.0
           ports: 
             - containerPort: 80  
     
