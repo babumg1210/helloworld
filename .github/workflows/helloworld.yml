@@ -1,8 +1,14 @@
-name: hello-world
+name: Build and push docker image to acr
 'on': push
 jobs:
-  my-job:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "Hello World!"
+      - name: Checkout
+      - uses: actions/checkout@main
+      - name: Docker Login
+        uses: azure/docker-login@v1
+        with:
+          login-server: '${{ secrets.AZURE_URL }}'
+          username: '${{ secrets.ACR_USERNAME }}'
+          password: '${{ secrets.ACR_PASSWORD }}'
