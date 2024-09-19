@@ -18,3 +18,4 @@ jobs:
           password: '${{ secrets.REGISTRY_PASSWORD }}'
       - run: >
           docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:1.0.0
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:1.0.0
