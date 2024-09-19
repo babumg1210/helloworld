@@ -6,17 +6,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
-      - name: Login via Azure CLI
-        uses: azure/login@v1
-        with:
-          creds: '${{ secrets.AZURE_CREDENTIALS }}'
-      - name: Build and push image
-        uses: azure/docker-login@v1
-        with:
-          login-server: '${{ secrets.REGISTRY_LOGIN_SERVER }}'
-          username: '${{ secrets.REGISTRY_USERNAME }}'
-          password: '${{ secrets.REGISTRY_PASSWORD }}'
+      # - name: Login via Azure CLI
+      #   uses: azure/login@v1
+      #   with:
+      #     creds: '${{ secrets.AZURE_CREDENTIALS }}'
+      # - name: Build and push image
+      #   uses: azure/docker-login@v1
+      #   with:
+      #     login-server: '${{ secrets.REGISTRY_LOGIN_SERVER }}'
+      #     username: '${{ secrets.REGISTRY_USERNAME }}'
+      #     password: '${{ secrets.REGISTRY_PASSWORD }}'
       - run: |
           docker build -t sampleapp:3.0.0 Applicationcode
           docker tag sampleapp:3.0.0 ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:3.0.0
+          docker images
+          az login az login --service-principal --username ${{ secrets.REGISTRY_USERNAME }}  --password ${{ secrets.REGISTRY_PASSWORD }}
+          az acr login --name ${{ secrets.REGISTRY_LOGIN_SERVER }
           docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:3.0.0
