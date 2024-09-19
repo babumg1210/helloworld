@@ -16,6 +16,6 @@ jobs:
           login-server: '${{ secrets.REGISTRY_LOGIN_SERVER }}'
           username: '${{ secrets.REGISTRY_USERNAME }}'
           password: '${{ secrets.REGISTRY_PASSWORD }}'
-      - run: >
-          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:1.0.0
-          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:1.0.0
+      - run: |
+          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:2.0.0
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:2.0.0
