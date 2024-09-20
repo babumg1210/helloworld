@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: deny-outbound
+  namespace: default  # Specify your namespace
+spec:
+  podSelector:
+    matchLabels:
+      app: myapp3  # Match your application's pods
+  policyTypes:
+    - Egress
+  egress: []  # An empty egress block denies all outbound traffic
