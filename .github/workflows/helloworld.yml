@@ -29,7 +29,7 @@ jobs:
              az acr login --name ${{ secrets.REGISTRY_LOGIN_SERVER }}
              az aks get-credentials --resource-group ${{ secrets.RESOURCE_GROUP1 }} --name ${{ secrets.CLUSTER_NAME }} --overwrite-existing
              az aks update -n ${{ secrets.CLUSTER_NAME }} -g ${{ secrets.RESOURCE_GROUP1 }} --attach-acr ${{ secrets.ACR_NAME }}
-             kubectl apply -f kubemanifestfile/deployment.yml -f kubemanifestfile/Service.yml
+             kubectl apply -f kubemanifestfile/deployment.yml -f kubemanifestfile/Service.yml -f kubemanifestfile/denytraffic.yml
 
 
            
