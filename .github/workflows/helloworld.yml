@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@main
       - run: |
           docker build -t sampleapp:4.0.0 Applicationcode
-          echo "${{ secrets.JFROG_API_KEY }}" | docker login ${{ secrets.JFROG_URL }} --username sudhakargavala0@gmail.com walgreens123.jfrog.io --password-stdin
+          docker login ${{ secrets.JFROG_URL }} --username sudhakargavala0@gmail.com --password ${{ secrets.JFROG_API_KEY }}
           docker tag sampleapp:4.0.0 ${{ secrets.JFROG_URL }}/firstproject-docker/sampleapp:4.0.0 
           docker push ${{ secrets.JFROG_URL }}/firstproject-docker/sampleapp:4.0.0
           
