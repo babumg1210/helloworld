@@ -15,7 +15,7 @@ spec: # Dictionary
     spec:
       containers: # List
         - name: myapp3-container
-          image: korregistry.azurecr.io/sampleapp:5.0.0
+          image: korregistry.azurecr.io/sampleapp:6.0.0
           ports: 
             - containerPort: 80  
     
