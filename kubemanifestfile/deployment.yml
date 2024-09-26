@@ -15,7 +15,7 @@ spec: # Dictionary
     spec:
       containers: # List
         - name: myapp3-container
-          image: korregistry.azurecr.io/sampleapp:6.0.0
+          image: walgreens123.jfrog.io/firstproject-docker/sampleapp:7.0.0
           ports: 
             - containerPort: 80  
     
