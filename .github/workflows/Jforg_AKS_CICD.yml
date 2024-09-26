@@ -7,10 +7,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
       - run: |
-          docker build -t sampleapp:8.0.0 Applicationcode
+          docker build -t sampleapp:9.0.0 Applicationcode
           docker login ${{ secrets.JFROG_URL }} --username sudhakargavala0@gmail.com --password ${{ secrets.JFROG_API_KEY }}
-          docker tag sampleapp:8.0.0 walgreens123.jfrog.io/docker-local/sampleapp:8.0.0 
-          docker push walgreens123.jfrog.io/docker-local/sampleapp:8.0.0
+          docker tag sampleapp:9.0.0 walgreens123.jfrog.io/docker-local/sampleapp:9.0.0 
+          docker push walgreens123.jfrog.io/docker-local/sampleapp:9.0.0
   deploy:
     needs: build
     runs-on: ubuntu-latest
