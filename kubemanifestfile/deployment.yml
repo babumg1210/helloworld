@@ -18,6 +18,6 @@ spec: # Dictionary
           image: walgreens123.jfrog.io/docker-local/sampleapp:8.0.0
           ports: 
             - containerPort: 80  
-          imagePullSecrets:
-          - name: jfrog-secret2
+      imagePullSecrets:
+        - name: jfrog-secret2
     
