@@ -19,5 +19,5 @@ spec: # Dictionary
           ports: 
             - containerPort: 80  
           imagePullSecrets:
-          - name: jfrog-secret1
+          - name: jfrog-secret2
     
