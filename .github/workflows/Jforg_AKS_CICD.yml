@@ -27,7 +27,7 @@ jobs:
              az acr login --name ${{ secrets.REGISTRY_LOGIN_SERVER }}
              az aks get-credentials --resource-group ${{ secrets.RESOURCE_GROUP1 }} --name ${{ secrets.CLUSTER_NAME }} --overwrite-existing
              #docker login ${{ secrets.JFROG_URL }} --username sudhakargavala0@gmail.com --password 
-             kubectl create secret docker-registry jfrog-secret1 --docker-server=walgreens123.jfrog.io --docker-username=sudhakargavala0@gmail.com --docker-password=${{ secrets.JFROG_API_KEY }} --docker-email=sudhakargavala0@gmail.com
+             kubectl create secret docker-registry jfrog-secret2 --docker-server=walgreens123.jfrog.io --docker-username=sudhakargavala0@gmail.com --docker-password=${{ secrets.JFROG_API_KEY }} --docker-email=sudhakargavala0@gmail.com
              # kubectl apply -f kubemanifestfile/deployment.yml -f kubemanifestfile/Service.yml 
              # kubectl get pods
              # kubectl get services
