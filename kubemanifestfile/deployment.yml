@@ -15,9 +15,9 @@ spec: # Dictionary
     spec:
       containers: # List
         - name: myapp3-container
-          image: walgreens123.jfrog.io/docker-local/sampleapp:8.0.0
+          image: walgreens123.jfrog.io/docker-local/sampleapp:9.0.0
           ports: 
             - containerPort: 80  
       imagePullSecrets:
-        - name: jfrog-secret2
+        - name: jfrog-secret3
     
