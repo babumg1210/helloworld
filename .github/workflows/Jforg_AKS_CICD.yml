@@ -26,7 +26,7 @@ jobs:
              az login --service-principal --username ${{ secrets.REGISTRY_USERNAME }} --password ${{ secrets.REGISTRY_PASSWORD }} --tenant 3d993c04-128c-48de-ba4a-1afbb101cfa1
              az acr login --name ${{ secrets.REGISTRY_LOGIN_SERVER }}
              az aks get-credentials --resource-group ${{ secrets.RESOURCE_GROUP1 }} --name ${{ secrets.CLUSTER_NAME }} --overwrite-existing
-             az aks update -n ${{ secrets.CLUSTER_NAME }} -g ${{ secrets.RESOURCE_GROUP1 }} --attach-acr ${{ secrets.ACR_NAME }}
-             kubectl apply -f kubemanifestfile/deployment.yml -f kubemanifestfile/Service.yml 
-             kubectl get pods
-             kubectl get services
+             kubectl set image deployment/myapp3-deployment myapp3-deployment=walgreens123.jfrog.io/firstproject-docker/sampleapp:7.0.0
+             #kubectl apply -f kubemanifestfile/deployment.yml -f kubemanifestfile/Service.yml 
+             #kubectl get pods
+             #kubectl get services
