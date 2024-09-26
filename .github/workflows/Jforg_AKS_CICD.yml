@@ -28,7 +28,6 @@ jobs:
              az aks get-credentials --resource-group ${{ secrets.RESOURCE_GROUP1 }} --name ${{ secrets.CLUSTER_NAME }} --overwrite-existing
              docker login ${{ secrets.JFROG_URL }} --username sudhakargavala0@gmail.com --password ${{ secrets.JFROG_API_KEY }}
              docker pull walgreens123.jfrog.io/firstproject-docker/sampleapp:7.0.0
-
-             #kubectl apply -f kubemanifestfile/deployment.yml -f kubemanifestfile/Service.yml 
-             #kubectl get pods
-             #kubectl get services
+             kubectl apply -f kubemanifestfile/deployment.yml -f kubemanifestfile/Service.yml 
+             kubectl get pods
+             kubectl get services
