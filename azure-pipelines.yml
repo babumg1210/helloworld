@@ -10,13 +10,13 @@ steps:
     versionSpec: '3.x'
     addToPath: true
 
-- script: |
-    echo "Installing gcloud SDK"
-    curl -sSL https://sdk.cloud.google.com | bash
-    echo "Initialize gcloud"
-    exec -l $SHELL
-    gcloud init
-  displayName: 'Install Google Cloud SDK'
+# - script: |
+#     echo "Installing gcloud SDK"
+#     curl -sSL https://sdk.cloud.google.com | bash
+#     echo "Initialize gcloud"
+#     exec -l $SHELL
+#     gcloud init
+#   displayName: 'Install Google Cloud SDK'
 
 - script: |
     gcloud compute ssh first-vm --command "mkdir -p /path/to/your/folder"
