@@ -1,21 +1,23 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+    addToPath: true
 
-- task: GoogleCloudSdkTool@1
-  inputs:
-    versionSpec: '315.x'
-- task: GoogleCloudSdkTool@1
-  inputs:
-    versionSpec: '315.x'
+- script: |
+    echo "Installing gcloud SDK"
+    curl -sSL https://sdk.cloud.google.com | bash
+    echo "Initialize gcloud"
+    exec -l $SHELL
+    gcloud init
+  displayName: 'Install Google Cloud SDK'
+
+- script: |
+    gcloud compute ssh first-vm --command "mkdir -p /path/to/your/folder"
+  displayName: 'Create folder in Google Compute Engine'
