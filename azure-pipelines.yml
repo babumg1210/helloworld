@@ -16,3 +16,6 @@ steps:
 - task: GoogleCloudSdkTool@1
   inputs:
     versionSpec: '315.x'
+- task: GoogleCloudSdkTool@1
+  inputs:
+    versionSpec: '315.x'
