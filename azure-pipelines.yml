@@ -10,3 +10,4 @@ variables:
 steps:
  - script: 
        echo $(name)
+       echo $(age)
