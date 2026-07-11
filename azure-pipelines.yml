@@ -5,11 +5,18 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-    name: 'sudhakar'
+- name: name
+  value: 'sudhakar'
+
+- group: airplan-variables
 
 steps:
- - script: 
-       echo $(name)
- - script: 
-       echo $(age)
+- script: |
+    echo $(name)
 
+- script: |
+    echo $(age)
+
+- script: |
+    echo $(javaVersion)
+  
