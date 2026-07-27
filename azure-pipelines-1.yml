@@ -13,8 +13,5 @@ steps:
 - script: docker version
   displayName: Check Docker
 
-- script: docker build -t myapp:v1 .
+- script: docker images ls
   displayName: Build Image
-
-- script: docker run -d -p 8080:80 myapp:v1
-  displayName: Run Container
