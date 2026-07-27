@@ -1,0 +1,20 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  name: Local-AgentPool
+
+steps:
+- script: docker version
+  displayName: Check Docker
+
+- script: docker build -t myapp:v1 .
+  displayName: Build Image
+
+- script: docker run -d -p 8080:80 myapp:v1
+  displayName: Run Container
