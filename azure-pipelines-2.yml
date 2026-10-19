@@ -1,0 +1,14 @@
+
+# Starter pipeline
+
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  x: 10
+
+steps:
+- script: echo "x value is $(x)"
+  displayName: 'Run a one-line script'
