@@ -12,3 +12,6 @@ variables:
 steps:
 - script: echo "x value is $(x)"
   displayName: 'Run a one-line script'
+
+- script: echo "my name is $(name)"
+  displayName: "display of your name"
