@@ -1,13 +1,20 @@
 trigger:
-- none
+ branches:
+   include:
+    - non
 
-pool:
-  vmImage: 'ubuntu-latest'
+pool: an agent pool is a collection of agenst.it used to excuted build and deployejobs are defined in the pipeline.when a pipline is trigger
+azure devops can select aegent from the list of agnets to run the pipeline.
 
-variables:
-  x: 10
+you have the two different types of agents
 
-steps:
-- bash: |
-    echo "This is the x value: $(x)"
-  displayName: 'Print variable value'
+1.slef hosted agent
+2.microsoft hosted agent
+self hosted agent are craeted and manged by you.you have to  installed and configured the required software and tools needed to excute build and deploy jobs.
+in the pipeline.We are responsible for maintaining, updating, and securing the agent.
+
+
+.
+
+ 
+
