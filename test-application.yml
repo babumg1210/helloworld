@@ -1,7 +1,7 @@
 trigger: none
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
 
 # jobs:
 #   - job: Build
@@ -14,20 +14,24 @@ pool:
 #   - job: Test
 #     steps:
 
+
+
+
 jobs:
   - job: Build
     steps:
       - script: |
           echo "##vso[task.setvariable variable=environment;isOutput=true]Dev"
-          echo "##vso[task.sertvariable  variable=appliatiom;isOutput=tru]web"
+          echo "##vso[task.setvariable variable=application;isOutput=true]web"
         name: SetEnvironment
 
   - job: Test
     dependsOn: Build
     variables:
       environment: $[ dependencies.Build.outputs['SetEnvironment.environment'] ]
-      application: $[ dependencies.Build.outputs['SetEnvironment.web'] ]
+      application: $[ dependencies.Build.outputs['SetEnvironment.application'] ]
+
     steps:
       - script: echo "Environment is $(environment)"
-      - script: echo "deploy the application $(application)"
+      - script: echo "Deploy the application $(application)"
 
